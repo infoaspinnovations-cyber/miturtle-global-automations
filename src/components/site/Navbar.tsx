@@ -24,14 +24,14 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-3" : "py-5"
+        scrolled ? "py-2 md:py-3" : "py-3 md:py-5"
       }`}
     >
       <div
-        className={`mx-auto flex max-w-7xl items-center justify-between rounded-full px-5 py-2.5 transition-all duration-500 ${
+        className={`mx-auto flex max-w-7xl items-center justify-between rounded-full px-3 py-2 sm:px-5 sm:py-2.5 transition-all duration-500 ${
           scrolled ? "glass-strong shadow-[0_10px_40px_-20px_rgba(0,0,0,0.6)]" : ""
         }`}
-        style={{ width: "calc(100% - 2rem)" }}
+        style={{ width: "calc(100% - 1rem)", maxWidth: "calc(100% - 1rem)" }}
       >
         <Link to="/" className="flex items-center gap-2.5 group">
           <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl"

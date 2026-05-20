@@ -43,10 +43,13 @@ function Products() {
                 params={{ slug: p.slug }}
                 className="group relative overflow-hidden rounded-3xl glass p-2 transition-all hover:-translate-y-1"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-navy-deep/60">
-                  <img src={p.image} alt={p.name} loading="lazy" className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                  <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-emerald-dark/40 bg-background/60 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-emerald-glow backdrop-blur">
+                <div className="relative overflow-hidden rounded-2xl">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden"
+                    style={{ background: "radial-gradient(ellipse at center, oklch(0.96 0.01 240) 0%, oklch(0.86 0.02 240) 100%)" }}>
+                    <img src={p.image} alt={p.name} loading="lazy" className="absolute inset-0 h-full w-full object-contain p-6 transition-transform duration-700 group-hover:scale-[1.04]" />
+                  </div>
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/80 to-transparent" />
+                  <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-emerald-dark/40 bg-background/70 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-emerald-glow backdrop-blur">
                     {p.model}
                   </div>
                 </div>
@@ -80,10 +83,13 @@ function Products() {
                 params={{ slug: p.slug }}
                 className="group relative overflow-hidden rounded-3xl glass p-2 transition-all hover:-translate-y-1"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-navy-deep/60">
-                  <img src={p.image} alt={p.name} loading="lazy" className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                  <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-emerald-dark/40 bg-background/60 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-emerald-glow backdrop-blur">
+                <div className="relative overflow-hidden rounded-2xl">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden"
+                    style={{ background: "radial-gradient(ellipse at center, oklch(0.96 0.01 240) 0%, oklch(0.86 0.02 240) 100%)" }}>
+                    <img src={p.image} alt={p.name} loading="lazy" className="absolute inset-0 h-full w-full object-contain p-6 transition-transform duration-700 group-hover:scale-[1.04]" />
+                  </div>
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/80 to-transparent" />
+                  <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-emerald-dark/40 bg-background/70 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-emerald-glow backdrop-blur">
                     {p.model}
                   </div>
                 </div>

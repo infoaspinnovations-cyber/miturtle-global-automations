@@ -185,6 +185,9 @@ function Home() {
         </div>
       </section>
 
+      {/* TRUSTED BY */}
+      <TrustedBy />
+
       {/* STATS */}
       <section className="relative py-24">
         <div className="mx-auto max-w-7xl px-6">

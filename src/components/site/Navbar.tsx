@@ -88,6 +88,10 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              <a href="tel:+916394861699" className="btn-ghost !py-2.5 text-xs justify-center">Call</a>
+              <a href="https://wa.me/916394861699" target="_blank" rel="noopener noreferrer" className="btn-primary !py-2.5 text-xs justify-center">WhatsApp</a>
+            </div>
             <Link to="/contact" onClick={() => setOpen(false)} className="btn-primary mt-2">Get a Quote</Link>
           </div>
         </div>

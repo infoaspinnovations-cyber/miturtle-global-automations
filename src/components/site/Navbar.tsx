@@ -20,6 +20,11 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
 
   return (
     <header
@@ -66,36 +71,49 @@ export function Navbar() {
 
         <button
           aria-label="Toggle menu"
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10"
+          aria-expanded={open}
+          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] active:scale-95 transition-transform"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
       </div>
 
-      {open && (
-        <div className="mx-4 mt-3 rounded-2xl glass-strong p-4 md:hidden">
-          <div className="flex flex-col gap-1">
-            {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-white/5 hover:text-foreground"
-                activeProps={{ className: "rounded-xl px-4 py-3 text-sm font-medium bg-white/5 text-foreground" }}
-                activeOptions={{ exact: l.to === "/" }}
-              >
-                {l.label}
-              </Link>
-            ))}
-            <div className="mt-2 grid grid-cols-2 gap-2">
-              <a href="tel:+916394861699" className="btn-ghost !py-2.5 text-xs justify-center">Call</a>
-              <a href="https://wa.me/916394861699" target="_blank" rel="noopener noreferrer" className="btn-primary !py-2.5 text-xs justify-center">WhatsApp</a>
-            </div>
-            <Link to="/contact" onClick={() => setOpen(false)} className="btn-primary mt-2">Get a Quote</Link>
+      {/* Mobile menu — overlay + slide-down panel, locked above content */}
+      <div
+        className={`md:hidden fixed inset-0 top-0 z-40 transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setOpen(false)}
+        aria-hidden={!open}
+      >
+        <div className="absolute inset-0 bg-background/70 backdrop-blur-sm" />
+      </div>
+      <div
+        className={`md:hidden fixed inset-x-3 top-[4.5rem] z-50 origin-top rounded-2xl glass-strong p-3 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.7)] transition-all duration-300 ${
+          open ? "opacity-100 translate-y-0 scale-100 pointer-events-auto" : "opacity-0 -translate-y-3 scale-[0.98] pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col gap-1">
+          {links.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-4 py-3.5 text-[0.95rem] font-medium text-muted-foreground hover:bg-white/5 hover:text-foreground"
+              activeProps={{ className: "rounded-xl px-4 py-3.5 text-[0.95rem] font-medium bg-white/5 text-foreground" }}
+              activeOptions={{ exact: l.to === "/" }}
+            >
+              {l.label}
+            </Link>
+          ))}
+          <div className="mt-2 grid grid-cols-2 gap-2">
+            <a href="tel:+916394861699" className="btn-ghost !py-3 text-xs justify-center">Call</a>
+            <a href="https://wa.me/916394861699" target="_blank" rel="noopener noreferrer" className="btn-primary !py-3 text-xs justify-center">WhatsApp</a>
           </div>
+          <Link to="/contact" onClick={() => setOpen(false)} className="btn-primary mt-2 !py-3">Get a Quote</Link>
         </div>
-      )}
+      </div>
     </header>
   );
 }

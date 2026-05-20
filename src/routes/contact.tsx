@@ -65,11 +65,13 @@ function Contact() {
           </form>
 
           <div className="space-y-4">
-            <InfoCard icon={MapPin} title="Headquarters" lines={["Industrial Park", "Smart City"]} />
-            <InfoCard icon={Phone} title="Phone" lines={["+91 00000 00000", "Mon–Sat · 9am – 7pm"]} />
+            <InfoCard icon={MapPin} title="Head Office" lines={["149 Shamabai Tower,", "Thakurdwar, Charni Road,", "Mumbai – 400002"]} />
+            <a href="tel:+916394861699" className="block">
+              <InfoCard icon={Phone} title="Phone" lines={["+91 63948 61699", "Mon–Sat · 9am – 7pm"]} />
+            </a>
             <InfoCard icon={Mail} title="Email" lines={["hello@miturtle.com", "support@miturtle.com"]} />
             <a
-              href="https://wa.me/910000000000"
+              href="https://wa.me/916394861699"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between rounded-3xl glass-strong p-6 transition-all hover:-translate-y-0.5"
@@ -81,7 +83,7 @@ function Contact() {
                 </span>
                 <div>
                   <div className="font-display text-lg font-bold">Chat on WhatsApp</div>
-                  <div className="text-xs text-muted-foreground">Fastest response · live engineer</div>
+                  <div className="text-xs text-muted-foreground">+91 63948 61699 · live engineer</div>
                 </div>
               </div>
               <Send className="size-4 text-emerald-glow" />
@@ -92,11 +94,11 @@ function Contact() {
         <div className="mx-auto mt-10 max-w-7xl px-6">
           <div className="overflow-hidden rounded-3xl glass-strong p-2">
             <iframe
-              title="MiTurtle location"
-              className="aspect-[21/9] w-full rounded-2xl border-0 grayscale invert"
+              title="MiTurtle Head Office — 149 Shamabai Tower, Charni Road, Mumbai"
+              className="aspect-[21/9] w-full rounded-2xl border-0"
               style={{ filter: "invert(0.92) hue-rotate(180deg)" }}
               loading="lazy"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=77.5%2C12.9%2C77.7%2C13.05&layer=mapnik"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=72.8125%2C18.9425%2C72.8275%2C18.9525&layer=mapnik&marker=18.9475%2C72.8200"
             />
           </div>
         </div>

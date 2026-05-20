@@ -1,15 +1,16 @@
-import boom120 from "@/assets/boom-mt-dcmt-120.jpg";
-import boom150 from "@/assets/boom-mt-dcgl-150.jpg";
-import boom200 from "@/assets/boom-mt-dcmt-200.jpg";
-import boom240 from "@/assets/boom-mt-dcmths-240.jpg";
-import sliding from "@/assets/sliding-gate-motor.jpg";
+import boom120 from "@/assets/boom-mt-dcmt-120.png";
+import boom150 from "@/assets/boom-mt-dcgl-150.png";
+import boom200 from "@/assets/boom-mt-dcmt-200.png";
+import boom240 from "@/assets/boom-mt-dcmths-240.png";
+import sliding from "@/assets/sliding-gate-motor.png";
 import access from "@/assets/access-control.jpg";
+import bollard from "@/assets/automatic-bollard.png";
 
 export type Product = {
   slug: string;
   model: string;
   name: string;
-  category: "boom" | "gate" | "access";
+  category: "boom" | "gate" | "access" | "bollard";
   tagline: string;
   description: string;
   image: string;
@@ -138,6 +139,30 @@ export const products: Product[] = [
       "Self-learning end stops",
     ],
     applications: ["Villas", "Industrial yards", "Warehouses", "Corporate campuses"],
+  },
+  {
+    slug: "automatic-bollard",
+    model: "MT-BLD",
+    name: "Automatic Rising Bollard",
+    category: "bollard",
+    tagline: "Hostile-vehicle mitigation, elegantly engineered",
+    description:
+      "A premium stainless-steel automatic rising bollard for high-security perimeters. Hydraulic actuation with sub-3-second deployment and crash-rated construction for critical entries.",
+    image: bollard,
+    specs: [
+      { label: "Rise Time", value: "2.8 sec" },
+      { label: "Height", value: "600 mm" },
+      { label: "Diameter", value: "Ø 220 mm" },
+      { label: "Build", value: "SS-304 Crash-Rated" },
+    ],
+    features: [
+      "Hydraulic precision actuation",
+      "LED amber rim lighting",
+      "Crash-rated stainless construction",
+      "Sub-3-second deployment",
+      "Loop & RFID integration",
+    ],
+    applications: ["Embassies", "VIP entrances", "Government", "Corporate HQ"],
   },
   {
     slug: "access-control-systems",

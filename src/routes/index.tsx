@@ -3,6 +3,7 @@ import { ArrowRight, ShieldCheck, Zap, Cpu, Wifi, Building2, Plane, ShoppingBag,
 import heroBg from "@/assets/hero-bg.jpg";
 import { products } from "@/lib/products";
 import { SectionHeader } from "@/components/site/Section";
+import { TrustedBy } from "@/components/site/TrustedBy";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -58,11 +59,14 @@ function Home() {
             <div className="absolute inset-x-10 -bottom-10 -z-10 h-40 rounded-full blur-3xl"
               style={{ background: "radial-gradient(ellipse, oklch(0.42 0.11 155 / 0.35), transparent 70%)" }} />
             <div className="relative overflow-hidden rounded-3xl glass-strong p-2">
-              <img src={variants[3].image} alt={variants[3].name} className="aspect-[16/9] w-full rounded-2xl object-cover" />
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl"
+                style={{ background: "radial-gradient(ellipse at center, oklch(0.96 0.01 240) 0%, oklch(0.88 0.02 240) 100%)" }}>
+                <img src={variants[3].image} alt={variants[3].name} className="absolute inset-0 h-full w-full object-contain p-6" />
+              </div>
               <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-4">
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-glow">Flagship</div>
-                  <div className="font-display text-2xl font-bold">{variants[3].model} · {variants[3].name}</div>
+                  <div className="font-display text-2xl font-bold rounded-md bg-background/70 px-3 py-1 backdrop-blur">{variants[3].model} · {variants[3].name}</div>
                 </div>
                 <Link to="/products/$slug" params={{ slug: variants[3].slug }} className="btn-ghost !py-2 !px-4 text-xs">View specs <ArrowRight className="size-3.5" /></Link>
               </div>
@@ -114,9 +118,10 @@ function Home() {
                 className="group relative overflow-hidden rounded-3xl glass p-2 transition-all hover:-translate-y-1"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <div className="relative overflow-hidden rounded-2xl bg-navy-deep/60">
-                  <img src={v.image} alt={v.name} loading="lazy" className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl"
+                  style={{ background: "radial-gradient(ellipse at top, oklch(0.96 0.01 240) 0%, oklch(0.85 0.02 240) 100%)" }}>
+                  <img src={v.image} alt={v.name} loading="lazy" className="absolute inset-0 h-full w-full object-contain p-4 transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/90 to-transparent" />
                 </div>
                 <div className="p-4">
                   <div className="text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-emerald-glow">{v.model}</div>
@@ -179,6 +184,9 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* TRUSTED BY */}
+      <TrustedBy />
 
       {/* STATS */}
       <section className="relative py-24">

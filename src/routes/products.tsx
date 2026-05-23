@@ -73,7 +73,8 @@ function Products() {
           </div>
 
           <div className="mt-20 mb-10 flex items-end justify-between">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold">Additional Automation</h2>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold">Sliding Gate Motors</h2>
+            <div className="hidden text-xs uppercase tracking-[0.25em] text-muted-foreground md:block">{others.length} models · smooth · silent · heavy-duty</div>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {others.map((p) => (

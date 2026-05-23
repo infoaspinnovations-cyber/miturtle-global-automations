@@ -50,11 +50,7 @@ function Contact() {
                   const label =
                     product.category === "boom"
                       ? `Boom Barrier — ${product.model}`
-                      : product.category === "gate"
-                      ? `Sliding Gate Motor — ${product.model}`
-                      : product.category === "access"
-                      ? `Access Control Systems — ${product.model}`
-                      : `Automatic Rising Bollard — ${product.model}`;
+                      : `Sliding Gate Motor — ${product.model}`;
                   return <option key={product.slug}>{label}</option>;
                 })}
                 <option>Other</option>
